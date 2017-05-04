@@ -10,14 +10,32 @@
 
 <h2>Manage Products</h2>
 <form action="manage_product_add">
-<input type="text" name="product_id" placeholder=" Product Id">
-<input type="text" name="category_id" placeholder=" Category Id"  >
-<input type="text" name="descrpition" placeholder="Descrpition">
-<input type="text" name="name" placeholder="Name">
-<input type="text" name="price" placeholder="Price">
-<input type="text" name="supplier_id" placeholder=" Supplier Id"   >
-<input type="text" name="type" placeholder=" Type">
-<input type="submit" name="createCategory">
+
+<input type="text" name="product_id" placeholder=" Product Id"> </br> </br>
+
+      <label>Select Category:</label>
+      <select class="form-control" id="sel1">
+                  <c:forEach var="category" items="${categoryList}">
+ 	<option><a href=#><h5>${category.name}</h5></a></option>
+      
+	</c:forEach>
+        </select>         
+        </br> </br>
+<input type="text" name="descrpition" placeholder="Descrpition"> </br> </br>
+<input type="text" name="name" placeholder="Name"> </br> </br>
+<input type="text" name="price" placeholder="Price"> </br> </br>
+
+<label>Select Supplier:</label>
+      <select class="form-control" id="sel1">
+                  <c:forEach var="supplier" items="${supplierList}">
+ 	<option><a href=#><h5>${supplier.name}</h5></a></option>
+      
+	</c:forEach>
+        </select>
+             </br> </br>
+             
+<input type="text" name="type" placeholder=" Type"> </br> </br>
+<input type="submit" name="createProduct">
 </form>
 
 

@@ -10,5 +10,13 @@
 
 <h2>Manage Suppliers</h2>
 
+<form action="manage_supplier_add">
+<input type="text" name="supplier_id" placeholder=" Supplier Id">
+<input type="text" name="address" placeholder="Address">
+<input type="text" name="contact" placeholder="Contact No">
+<input type="text" name="name" placeholder="Name">
+<input type="submit" name="createSupplier">
+
+
 </body>
 </html>

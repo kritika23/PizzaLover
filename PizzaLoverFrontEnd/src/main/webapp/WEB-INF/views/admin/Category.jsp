@@ -10,11 +10,36 @@
 
 <h2>Manage Categories</h2>
 <form action="manage_category_add">
-<input type="text" name="category_id" placeholder=" Category Id">
+<input type="text" name="category_id" placeholder="Category Id">
 <input type="text" name="name" placeholder="Name">
-<input type="text" name="descrpition" placeholder="Descrpition">
+<input type="text" name="description" placeholder="Description">
 <input type="submit" name="createCategory">
 </form>
 
+
+
+<h2>Delete/Update Categories</h2>
+<div id="showCategories">
+<table border="1">
+<thead>
+<tr>
+<td> &nbsp; Category Id  &nbsp; &nbsp;</td> 
+<td> &nbsp; Category Name  &nbsp; &nbsp;</td>
+<td> &nbsp; Category Description &nbsp; &nbsp;</td>
+<td> &nbsp; Action &nbsp; &nbsp;</td>
+</tr>
+</thead>
+
+<c:forEach var="category" items="${categoryList}">
+<tr>
+<td> &nbsp;${category.category_id}</td>
+<td> &nbsp;${category.name}</td>
+<td> &nbsp;${category.description}</td>
+ <td> <a href="#"> Delete | </a>   
+	   <a href=""> Update  </a> </td>
+</tr>
+</c:forEach>
+</table>
+</div>
 </body>
 </html>

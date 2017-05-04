@@ -39,9 +39,9 @@
     
      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">${category.name}<span class="caret"></span></a>
         <ul class="dropdown-menu">
-        <c:forEach var="product" items="${category.products}">
-<li><a href=${product.name}><h5>${product.name}</h5></a></li>
-</c:forEach>
+     <c:forEach var="product" items="${category.products}">
+ 	<li><a href=${product.name}><h5>${product.name}</h5></a></li>
+	</c:forEach>
           <!-- <li><a href="#">Chesse Burst</a></li>
           <li><a href="#">Plain crust</a></li>
           <li><a href="#">Simple Toppings</a></li> -->

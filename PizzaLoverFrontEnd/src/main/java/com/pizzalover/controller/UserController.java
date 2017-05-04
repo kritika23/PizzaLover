@@ -1,5 +1,8 @@
 package com.pizzalover.controller;
 
+import javax.servlet.http.HttpSession;
+
+import org.h2.engine.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.pizzalover.dao.CategoryDAO;
@@ -23,6 +27,7 @@ public class UserController {
 	@Autowired User user;
 	@Autowired CategoryDAO categoryDAO;
 	@Autowired Category category;
+	@Autowired HttpSession session;
 	
 	@RequestMapping("registerUser")
 	public ModelAndView registerUser(@ModelAttribute User user){
@@ -56,12 +61,14 @@ log.debug("Starting of validate");
 	{
 	 userDAO.getByUserId(user_id);
 	 mav.addObject("user_id",user_id);
-	 
+	 session.setAttribute("user_id",user_id);
 	 mav.addObject("message", " Welcome Pizza Lover , " + user_id);
 	 
 	 mav.addObject("categoryList",categoryDAO.list());
 	 mav.addObject("category", category);
 	 
+	
+
 	 
 		//check wheter role is admin or user.
 	 
@@ -69,6 +76,8 @@ log.debug("Starting of validate");
 	 {
 		 log.debug("IsAdmin True "+user.getRole());
 		 mav.addObject("isAdmin", "true");
+		 
+		 
 	 }
 	 else
 	 {
@@ -85,23 +94,9 @@ log.debug("Starting of validate");
 	}
 	return  mav;
 	}
+
+	}
 	
+
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-}
+

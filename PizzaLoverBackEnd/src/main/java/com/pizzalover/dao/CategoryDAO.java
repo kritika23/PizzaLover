@@ -16,4 +16,5 @@ public interface CategoryDAO {
 	
 	public Category getByCategoryName(String name);
 
+
 }
