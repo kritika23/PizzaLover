@@ -18,6 +18,8 @@ public class CategoryDAOTestCase {
 	@Autowired static AnnotationConfigApplicationContext context;
 	@Autowired static CategoryDAO categoryDAO;
 	@Autowired static Category category;
+	 private String createCategoryTestCase;
+
 	
 	
 	@BeforeClass
@@ -31,14 +33,13 @@ public class CategoryDAOTestCase {
 
 	}
 	
-	 private String createCategoryTestCase;
 	 
 	 @Test
 		public void createCategoryTestCase() {
 		 
-		category.setCategory_id("C_01");
-		category.setName("Veg Pizza");
-		category.setDescription("Chesse");
+		category.setCategory_id("C_06");
+		category.setName(" Egg Pizza");
+		category.setDescription("Egg");
 		
 		boolean flag = categoryDAO.save(category);
 

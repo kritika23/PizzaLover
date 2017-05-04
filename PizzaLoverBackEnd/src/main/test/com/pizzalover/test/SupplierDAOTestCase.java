@@ -35,10 +35,10 @@ public class SupplierDAOTestCase {
 	@Test
 	public void createSupplierTestCase() {
 
-		supplier.setSupplier_id("S_001");
-		supplier.setName("Counter No.1");
-		supplier.setContact("C-00201");
-		supplier.setAddress("First Counter");
+		supplier.setSupplier_id("S_04");
+		supplier.setName("Agarwal & Company");
+		supplier.setContact("05215-564163");
+		supplier.setAddress("Banglore");
 
 		boolean flag = supplierDAO.save(supplier);
 

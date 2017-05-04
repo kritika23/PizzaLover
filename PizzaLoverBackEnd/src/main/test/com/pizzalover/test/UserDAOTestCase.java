@@ -39,8 +39,9 @@ public class UserDAOTestCase {
 		user.setFname("Kritika");
 		user.setLname("Poojari");
 		user.setAdd("Mumbai");
-		user.setNumber("9831561263");
+		user.setNumber("9841521564");
 		user.setRole("ROLE_ADMIN");
+		user.setEmail("kritika@gmail.com");
 	
 		
 		boolean flag=userDAO.save(user);

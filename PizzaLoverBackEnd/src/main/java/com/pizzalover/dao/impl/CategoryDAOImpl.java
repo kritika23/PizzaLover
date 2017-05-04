@@ -5,7 +5,9 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -75,6 +77,19 @@ public class CategoryDAOImpl implements CategoryDAO {
 	public Category getByCategoryId(String category_id) {
 
 		return (Category) sessionFactory.getCurrentSession().get(Category.class, category_id);
+	}
+
+	public Category getByCategoryName(String name) {
+		
+		
+		log.debug("starting of getByCategoryName");
+
+		String hql = "from Category where name ='" + name + "'";
+		System.out.println(hql);
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		log.debug("ending of getByCategoryName");
+		System.out.println("ending of getByCategoryName");
+		return (Category) query.uniqueResult();
 	}
 
 }

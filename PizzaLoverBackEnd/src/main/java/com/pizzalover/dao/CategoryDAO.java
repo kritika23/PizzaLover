@@ -10,6 +10,10 @@ public interface CategoryDAO {
 	public boolean update(Category category);
 	public boolean delete(Category category);
 	public List<Category> list();
+		
+	
 	public Category getByCategoryId(String category_id);
+	
+	public Category getByCategoryName(String name);
 
 }

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.pizzalover.dao.ProductDAO;
+import com.pizzalover.domain.Category;
 import com.pizzalover.domain.Product;
 
 public class ProductDAOTestCase {
@@ -30,35 +31,45 @@ public class ProductDAOTestCase {
 
 	}
 
-	private String createProductTestCase;
 
-	// @Test
+@Test
+	
 	public void createProductTestCase() {
-
-		product.setProduct_id("p-001");
-		product.setName("Veg Chesse Pizza");
-		product.setDescription("Tbjfkb");
+		
+		product.setProduct_id("P_06");
+		product.setName("Egg Pizza ");
+		product.setDescription("This Egg Pizza is a pizza with lots of scrambled eggs,fries eggs and toppings of pizza.");
 		product.setType("Small");
-		product.setPrice("450");
+		product.setPrice("300");
+		product.setCategory_id("C_06");		
+        product.setSupplier_id("S_02");
 
+	
 		boolean flag = productDAO.save(product);
 
-		assertEquals("saveProductTestCase", true, flag);
+		assertEquals("createProductTestCase", true, flag);
 	}
 
-	@Test
-	public void updateProductTestCase() {
 
-		product.setProduct_id("P_001");
-		product.setName("Veg Chesse Pizza");
-		product.setDescription(
-				"This Veg Chesse Pizza comes with thick crust of cheese and sauces and is filled with cheddar, parmesan and gouda. ");
-		product.setType("Medium");
-		product.setPrice("450");
 
-		boolean flag = productDAO.save(product);
 
-		assertEquals("saveProductTestCase", true, flag);
-	}
+//@Test
+public void updateProductTestCase() {
+	
+	product.setProduct_id("P_02");
+	product.setName("Chunky Chicken Pizza ");
+	product.setDescription("This Non-Veg Chicken Pizza is with combination of cheese,barbeque chicken, pepperoni and spicy toppings.");
+	product.setType("Large");
+	product.setPrice("800");
+	product.setCategory_id("C_02");		
+    product.setSupplier_id("S_03");
+
+
+	boolean flag = productDAO.update(product);
+
+	assertEquals("updateProductTestCase", true, flag);
+}
+
+
 
 }
