@@ -31,7 +31,14 @@
         </ul>
       </li>
       <li><a href="RegistrationPage"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="LoginPage"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    
+            <c:if test="${user_id ==null}" >
+      
+            <li><a href="LoginPage"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </c:if>
+        <c:if test="${user_id !=null}" >
+      <li><a href="LogoutPage"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      </c:if>
     </ul>
   </div>
 </nav>

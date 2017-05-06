@@ -5,6 +5,7 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.pizzalover.dao.ProductDAO;
+import com.pizzalover.domain.Category;
 import com.pizzalover.domain.Product;
 
 @Repository("productDAO")
@@ -77,5 +79,30 @@ public class ProductDAOImpl implements ProductDAO {
 
 		return (Product) sessionFactory.getCurrentSession().get(Product.class, product_id);
 	}
+
+	public Product getByProductName(String name) {
+		
+		log.debug("starting of getByProductName");
+
+		String hql = "from Product where name ='" + name + "'";
+		System.out.println(hql);
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		log.debug("ending of getByProductName");
+		System.out.println("ending of getByProductName");
+		return (Product) query.uniqueResult();
+	}
+
+	@Transactional
+	public List<Product> getAllProductsByCategoryId(String category_id) {
+
+			
+			//String hql ="from Product where category_id=?";
+		Query query= sessionFactory.getCurrentSession().createQuery("from Product where category_id='"+category_id+"'");
+	
+		return query.list();
+			
+		
+	}
+
 
 }

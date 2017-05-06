@@ -1,6 +1,5 @@
 <link href="resources/css/login.css" rel="stylesheet">
 
- 
 
 <div class="omb_login">
     	<h3 class="omb_authTitle">Login</h3>

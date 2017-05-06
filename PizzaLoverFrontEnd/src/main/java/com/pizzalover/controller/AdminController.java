@@ -35,6 +35,7 @@ public class AdminController {
 		
 		mv.addObject("categoryList", categoryDAO.list());
 		mv.addObject("isAdminClickedCategories", "true");
+		
 		mv.addObject("isAdmin", "true");
 		log.debug("Ending of the manage Categories");
 

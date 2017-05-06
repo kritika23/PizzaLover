@@ -14,7 +14,6 @@ import com.pizzalover.dao.CategoryDAO;
 import com.pizzalover.dao.ProductDAO;
 import com.pizzalover.domain.Category;
 import com.pizzalover.domain.Product;
-import com.pizzalover.test.CategoryDAOTestCase;
 
 @Controller
 public class HomeController {

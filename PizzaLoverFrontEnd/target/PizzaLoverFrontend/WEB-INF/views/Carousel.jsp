@@ -41,7 +41,7 @@
                             <!-- Slide Text Layer -->
                             <div class="slide-text slide_style_left">
                                 <h1 data-animation="animated zoomInRight">VEG PIZZA</h1>
-                                <p data-animation="animated fadeInLeft">No veggie lover will be able to turn down our Pacific Veggie pizza. With a combination of roasted red peppers, fresh onions, fresh mushrooms, tomatoes, and black olives, it's an herbivore's delight.</p>
+                                <p data-animation="animated fadeInLeft">No veggie lover will be able to turn down our Pacific Veggie pizza. With a combination of roasted red peppers, onions, fresh mushrooms, tomatoes, and black olives, it's an herbivore's delight.</p>
                                 
                             </div>
                         </div>
@@ -118,7 +118,7 @@
                     <!-- Slide Text Layer -->
                     <div class="slide-text slide_style_right">
                         <h1 data-animation="animated flipInX">EGG PIZZA</h1>
-                        <p data-animation="animated lightSpeedIn">Why eat leftover pizza for breakfast when you can have ours fresh, with scrambled eggs, bacon and tomatoes, and classic pizza crust.</p>
+                        <p data-animation="animated lightSpeedIn">Why eat leftover pizza for breakfast when you can have ours fresh, with scrambled eggs, bacon and chesse, and classic pizza crust.</p>
                        
                     </div>
                 </div>
