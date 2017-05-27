@@ -1,5 +1,7 @@
 package com.pizzalover.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +25,7 @@ public class AdminController {
 	@Autowired Supplier supplier;
 	@Autowired ProductDAO productDAO;
 	@Autowired Product product;
+	@Autowired HttpSession session;
 	
 	private static  Logger log = LoggerFactory.getLogger(AdminController.class);
 	
@@ -32,10 +35,8 @@ public class AdminController {
 	{
 		log.debug("Starting of the manage Categories");
 		ModelAndView mv= new ModelAndView("Home");
-		
-		mv.addObject("categoryList", categoryDAO.list());
+		mv.addObject("categoryList",categoryDAO.list());
 		mv.addObject("isAdminClickedCategories", "true");
-		
 		mv.addObject("isAdmin", "true");
 		log.debug("Ending of the manage Categories");
 

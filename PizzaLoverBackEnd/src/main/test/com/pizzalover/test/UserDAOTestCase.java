@@ -34,14 +34,14 @@ public class UserDAOTestCase {
 	@Test
 	public void createUserTestCase(){
 		
-		user.setUser_id("kritika");
-		user.setPassword("kri");
-		user.setFname("Kritika");
-		user.setLname("Poojari");
+		user.setUser_id("prathmesh");
+		user.setPassword("pra");
+		user.setFname("Prathmesh");
+		user.setLname("Raut");
 		user.setAdd("Mumbai");
 		user.setNumber("9841521564");
-		user.setRole("ROLE_ADMIN");
-		user.setEmail("kritika@gmail.com");
+		user.setRole("ROLE_USER");
+		user.setEmail("prathmesh@gmail.com");
 	
 		
 		boolean flag=userDAO.save(user);

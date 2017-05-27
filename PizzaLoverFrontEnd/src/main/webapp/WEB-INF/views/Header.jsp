@@ -1,8 +1,10 @@
 
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+  <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 </head>
   <div class="row zsx">
@@ -37,7 +39,9 @@
             <li><a href="LoginPage"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </c:if>
         <c:if test="${user_id !=null}" >
-      <li><a href="LogoutPage"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      <li><a href="/j_spring_security_Logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      
+      <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /> 
       </c:if>
     </ul>
   </div>

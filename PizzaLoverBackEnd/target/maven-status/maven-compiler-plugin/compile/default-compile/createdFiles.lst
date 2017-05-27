@@ -1,4 +1,6 @@
+com\pizzalover\domain\Cart.class
 com\pizzalover\dao\impl\UserDAOImpl.class
+com\pizzalover\dao\impl\CartDAOImpl.class
 com\pizzalover\dao\impl\SupplierDAOImpl.class
 com\pizzalover\dao\SupplierDAO.class
 com\pizzalover\config\AnnotationConfigApplicationContext.class
@@ -6,6 +8,7 @@ com\pizzalover\domain\Product.class
 com\pizzalover\domain\Supplier.class
 com\pizzalover\domain\User.class
 com\pizzalover\dao\ProductDAO.class
+com\pizzalover\dao\CartDAO.class
 com\pizzalover\dao\impl\CategoryDAOImpl.class
 com\pizzalover\dao\UserDAO.class
 com\pizzalover\dao\impl\ProductDAOImpl.class

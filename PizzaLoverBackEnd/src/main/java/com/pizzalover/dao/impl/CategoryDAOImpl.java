@@ -19,7 +19,7 @@ import com.pizzalover.domain.Category;
 @Repository("categoryDAO")
 @Transactional
 public class CategoryDAOImpl implements CategoryDAO {
-	public static Logger log = LoggerFactory.getLogger(SupplierDAOImpl.class);
+	public static Logger log = LoggerFactory.getLogger(CategoryDAOImpl.class);
 
 	@Autowired
 	private SessionFactory sessionFactory;

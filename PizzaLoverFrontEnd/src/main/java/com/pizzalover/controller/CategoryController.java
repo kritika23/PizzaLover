@@ -79,7 +79,12 @@ public class CategoryController {
 		log.debug("You are going to delete :" +category_id);
 		
 		ModelAndView mv=new ModelAndView("redirect:/manageCategories");
-productDAO.getAllProductsByCategoryId(category_id);
+        if(productDAO.getAllProductsByCategoryId(category_id).size()!=0)
+        {
+        	log.debug("Few products are there under this category. You cannot delete this Id");
+        	mv.addObject("message", "Few products are there under this category. You cannot delete this Id");
+        	return mv;
+        }
 	  Category category=categoryDAO.getByCategoryId(category_id);
 	  if(categoryDAO.delete(category))
 		{

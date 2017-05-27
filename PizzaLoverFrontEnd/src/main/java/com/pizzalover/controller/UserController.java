@@ -50,11 +50,11 @@ public class UserController {
 		return mv;
 	}
 	
-	
+/*	
 	@RequestMapping("/validate")
 	public ModelAndView Login(@RequestParam("user_id") String user_id, @RequestParam("password") String password)
 {
-log.debug("Starting of validate");
+		log.debug("Starting of validate");
 	ModelAndView mav= new ModelAndView("/Home");
 	User user=userDAO.getByUserId(user_id);
 	if(userDAO.validate(user_id, password)==true)
@@ -62,10 +62,16 @@ log.debug("Starting of validate");
 	 userDAO.getByUserId(user_id);
 	 mav.addObject("user_id",user_id);
 	 session.setAttribute("user_id",user_id);
+	 //loggedInUserID
+	 session.setAttribute("loggedInUserID",user_id);
+
 	 mav.addObject("message", " Welcome Pizza Lover , " + user_id);
 	 
 	 mav.addObject("categoryList",categoryDAO.list());
 	 mav.addObject("category", category);
+	 
+	 //store the userid in the session
+	 session.setAttribute("loggedInUser_id", user.getUser_id());
 	 
 	
 
@@ -77,12 +83,16 @@ log.debug("Starting of validate");
 		 log.debug("IsAdmin True "+user.getRole());
 		 mav.addObject("isAdmin", "true");
 		 
+		 session.setAttribute("role", "ROLE_ADMIN");
+		 
 		 
 	 }
 	 else
 	 {
 		 log.debug("IsAdmin False "+user.getRole());
 		 mav.addObject("isAdmin", "false");
+		 
+		 session.setAttribute("role", "ROLE_USER");
 	 }
 	 
 	}
@@ -94,6 +104,7 @@ log.debug("Starting of validate");
 	}
 	return  mav;
 	}
+	*/
 
 	}
 	

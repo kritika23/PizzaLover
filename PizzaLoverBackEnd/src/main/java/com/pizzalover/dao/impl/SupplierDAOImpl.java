@@ -5,6 +5,7 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.pizzalover.dao.SupplierDAO;
+import com.pizzalover.domain.Category;
 import com.pizzalover.domain.Supplier;
 
 @Repository("supplierDAO")
@@ -77,5 +79,19 @@ public class SupplierDAOImpl implements SupplierDAO {
 
 		return (Supplier) sessionFactory.getCurrentSession().get(Supplier.class, supplier_id);
 	}
+
+	public Supplier getBySupplierName(String name) {
+	
+		
+		log.debug("starting of getBySupplierName");
+
+		String hql = "from Supplier where name ='" + name + "'";
+		System.out.println("getSupplierName Query"+hql);
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		log.debug("ending of getBySupplierName");
+		System.out.println("ending of getBySupplierName");
+		return (Supplier) query.uniqueResult();
+	}
+	
 
 }

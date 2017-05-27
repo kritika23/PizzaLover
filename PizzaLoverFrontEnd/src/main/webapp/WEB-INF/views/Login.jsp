@@ -1,5 +1,8 @@
 <link href="resources/css/login.css" rel="stylesheet">
 
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 
 <div class="omb_login">
     	<h3 class="omb_authTitle">Login</h3>
@@ -34,7 +37,10 @@
 
 		<div class="row omb_row-sm-offset-3">
 			<div class="col-xs-12 col-sm-6">	
-			    <form class="omb_loginForm" action="validate" autocomplete="off" method="POST">
+			
+			
+           <c:url var="action" value="/j_spring_security_check"></c:url>
+			    <form class="omb_loginForm" action="${action}" autocomplete="off" method="POST">
 					<div class="input-group">
 						<span class="input-group-addon"><i class="fa fa-user"></i></span>
 						<input type="text" class="form-control" name="user_id" placeholder="User Id">
@@ -48,6 +54,9 @@
                    
 
 					<button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+					
+					
+					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /> 
 				</form>
 			</div>
     	</div>

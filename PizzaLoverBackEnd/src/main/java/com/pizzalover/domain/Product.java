@@ -5,26 +5,28 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.springframework.jmx.export.annotation.ManagedAttribute;
 import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 @Table
 @Component
 public class Product {
 	
-	@Id
-	 private String product_id;
+		@Id
+	 	private String product_id;
+		private String category_id;
 		private String name;
 		private String description;
-		private String type;
-		private String price;
-		
-		private String category_id;
 		private String supplier_id;
-		
-		
+		private String price;
+		private String type;
+	
+
+
 		public String getCategory_id() {
 			return category_id;
 		}
@@ -39,12 +41,28 @@ public class Product {
 		}
 		
 		@ManyToOne
-		@JoinColumn(name="category_id",nullable= false, updatable=false, insertable=false )
+		@JoinColumn(name="category_id",referencedColumnName="category_id" ,nullable= false, updatable=false, insertable=false )
 		private Category category;
 		
 		@ManyToOne
 		@JoinColumn(name="supplier_id",nullable= false, updatable=false, insertable=false)
 		private Supplier supplier;
+		
+		
+		//Do not persist or save in database
+		
+		
+		@Transient
+		private MultipartFile image;
+		
+		public MultipartFile getImage() {
+			return image;
+		}
+		public void setImage(MultipartFile image) {
+			this.image = image;
+		}
+
+		
 		
 		public Supplier getSupplier() {
 			return supplier;

@@ -4,25 +4,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Product Page</title>
 </head>
 <body>
 
-	<h2>Manage Products</h2>
+<h2>Manage Products</h2>
+
+
 	<form action="manage_product_add">
 
 		<input type="text" name="product_id" placeholder=" Product Id"></br>
-		 <label>Select Category:</label> <select class="form-control" id="sel1">
+		 <label>Select Category:</label> <select name="category_name" class="form-control" id="category_name">
 			<c:forEach var="category" items="${categoryList}">
-				<option><a href=#><h5>${category.name}</h5></a></option>
+				<option ><a href=#><h5>${category.name}</h5></a></option>
 
 			</c:forEach>
 		</select> 
-		 <input type="text" name="descrpition" placeholder="Descrpition"></br>
+		 <input type="text" name="description" placeholder="Descrpition"></br>
 		<input type="text" name="name" placeholder="Name"></br>
 		<input type="text" name="price" placeholder="Price"> </br>
 		 <label>Select Supplier:</label> </br>
-		 <select class="form-control" id="sel1">
+		 <select name="supplier_name"class="form-control" id="supplier_name">
 			<c:forEach var="supplier" items="${supplierList}">
 				<option><a href=#><h5>${supplier.name}</h5></a></option>
 
@@ -30,6 +32,7 @@
 		</select>
 		<input type="text" name="type" placeholder=" Type"></br>
 		<input  type="submit" value="CreateProduct">
+		
 	</form>
 
 </br>
@@ -46,9 +49,10 @@
 		<input type="text" name="type" placeholder="Type" value="${selectedProduct.type}">
 		 
 		 <input type="submit" value="UpdateProduct">
+
 	</form>
 
-	</div>
+	</div> 
 
 
 <h2>Delete/Update Products</h2>
@@ -67,8 +71,9 @@
 				</tr>
 			</thead>
 					
-				
-				
+					
+<!-- 				<h3> Product List</h3>	 -->	
+		
 			<c:forEach var="product" items="${productList}">
 				<tr>
 					<td>&nbsp;${product.product_id}</td>

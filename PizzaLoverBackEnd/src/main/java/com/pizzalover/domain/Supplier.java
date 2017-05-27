@@ -21,7 +21,7 @@ public class Supplier {
 	private String contact;
 	private String address;
 	
-	@OneToMany(mappedBy="supplier_id",fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="supplier",fetch=FetchType.EAGER)
 
  private Set<Product> products;
 	

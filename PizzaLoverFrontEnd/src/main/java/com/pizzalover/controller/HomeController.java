@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.pizzalover.dao.CategoryDAO;
 import com.pizzalover.dao.ProductDAO;
+import com.pizzalover.dao.SupplierDAO;
 import com.pizzalover.domain.Category;
 import com.pizzalover.domain.Product;
+import com.pizzalover.domain.Supplier;
 
 @Controller
 public class HomeController {
@@ -21,8 +23,11 @@ public class HomeController {
 	@Autowired HttpSession session;
 	@Autowired Category category;
 	@Autowired CategoryDAO categoryDAO;
-//	@Autowired Product product;
-//	@Autowired ProductDAO productDAO;
+	@Autowired Product product;
+	@Autowired ProductDAO productDAO;
+	@Autowired SupplierDAO supplierDAO;
+	@Autowired Supplier supplier;
+	
 
 
 	@RequestMapping("/")
@@ -33,13 +38,15 @@ public class HomeController {
 		session.setAttribute("categoryList", categoryList);
 		session.setAttribute("category", category);
 
-		
-		/*List<Product> productList= productDAO.list();
-		session.setAttribute("productList", productList);
+		List<Supplier> supplierList= supplierDAO.list();
+		session.setAttribute("supplierList", supplierList);
+		session.setAttribute("supplier", supplier);
+
+	
+		session.setAttribute("productList", productDAO.list());
 		session.setAttribute("product", product);
 
-*/		
-		
+	
 		return "Home";
 	}
 

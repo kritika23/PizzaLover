@@ -104,5 +104,15 @@ public class ProductDAOImpl implements ProductDAO {
 		
 	}
 
+	public List<Product> getAllProductsBySupplierId(String supplier_id) {
+
+		
+		//String hql ="from Product where category_id=?";
+	Query query= sessionFactory.getCurrentSession().createQuery("from Product where supplier_id='"+supplier_id+"'");
+
+	return query.list();
+		
+	}
+
 
 }

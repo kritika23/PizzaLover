@@ -9,7 +9,7 @@
 <body>
 
 	<h2>Manage Categories</h2>
-	<form action="manage_category_add">
+	<form action="manage_category_add" method="get">
 		<input type="text" name="category_id" placeholder="Category Id">
 		<input type="text" name="name" placeholder="Name"> <input
 			type="text" name="description" placeholder="Description"> <input
@@ -19,7 +19,7 @@
 </br>
 <div id="UpdateCategory">
 	
-	<form action="manage_category_update">
+	<form action="manage_category_update" method="post">
 		<input type="text" name="category_id" placeholder="Category Id" value="${selectedCategory.category_id }">
 		<input type="text" name="name" placeholder="Name" value="${selectedCategory.name}">
 		 <input type="text" name="description" placeholder="Description" value="${selectedCategory.description}"> 
@@ -46,33 +46,12 @@
 					<td>&nbsp;${category.category_id}</td>
 					<td>&nbsp;${category.name}</td>
 					<td>&nbsp;${category.description}</td>
-					<td><a href="/manage_category_delete/{category_id}">&nbsp; Delete | </a> <a href="/manage_category_edit/{category_id}"> Edit&nbsp; </a></td>
+					<td><a href="<c:url value='/manage_category_delete/${category.category_id}'/>">&nbsp; Delete | </a>
+					<a href="<c:url value='/manage_category_edit/${category.category_id}'/>"> Update &nbsp; </a></td>
 				</tr>
 			</c:forEach>
 		</table>
 	</div>
-	
-	
-	
-	           
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 </html>

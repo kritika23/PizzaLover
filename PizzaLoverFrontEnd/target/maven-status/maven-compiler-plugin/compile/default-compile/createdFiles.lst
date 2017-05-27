@@ -1,4 +1,9 @@
-com\pizzalover\controller\HomeController.class
+com\pizzalover\controller\ProductController.class
 com\pizzalover\controller\AdminController.class
 com\pizzalover\controller\CategoryController.class
+com\pizzalover\controller\HomeController.class
+com\pizzalover\util\Util.class
+com\pizzalover\controller\SupplierController.class
+com\pizzalover\controller\CartController.class
+com\pizzalover\controller\SpringSecurityController.class
 com\pizzalover\controller\UserController.class

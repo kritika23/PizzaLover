@@ -16,4 +16,9 @@ public interface ProductDAO {
 	public Product getByProductName(String name);
 
 	public List<Product> getAllProductsByCategoryId(String category_id);
+	
+	public List<Product> getAllProductsBySupplierId(String supplier_id);
 }
+
+
+

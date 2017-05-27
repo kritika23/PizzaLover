@@ -13,6 +13,7 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.pizzalover.dao.UserDAO;
+import com.pizzalover.domain.Cart;
 import com.pizzalover.domain.Category;
 import com.pizzalover.domain.Product;
 import com.pizzalover.domain.Supplier;
@@ -59,7 +60,7 @@ public class AnnotationConfigApplicationContext {
 		sessionBuilder.addAnnotatedClasses(Product.class);
 		sessionBuilder.addAnnotatedClasses(Category.class);
 		//sessionBuilder.addAnnotatedClasses(BillingAddress.class);
-		//sessionBuilder.addAnnotatedClasses(Cart.class);
+		sessionBuilder.addAnnotatedClasses(Cart.class);
 		//sessionBuilder.addAnnotatedClasses(CartItem.class);
 		//sessionBuilder.addAnnotatedClasses(Customer.class);
 		//sessionBuilder.addAnnotatedClasses(ShippingAddress.class);

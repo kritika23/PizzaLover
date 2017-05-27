@@ -21,7 +21,7 @@ public class Category {
 	private String category_id;
 	private String name;
 	private String description;
-	@OneToMany(mappedBy="category_id",fetch=FetchType.EAGER )
+	@OneToMany(mappedBy="category",fetch=FetchType.EAGER )
 	private Set<Product> products;
 	
 	

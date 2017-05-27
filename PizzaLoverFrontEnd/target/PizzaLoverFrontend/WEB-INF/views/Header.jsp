@@ -1,8 +1,10 @@
 
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+  <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 </head>
   <div class="row zsx">
@@ -23,12 +25,12 @@
     
     <ul class="nav navbar-nav navbar-right">
           <li class="active"><a href="Home">Home</a></li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Pizza<span class="caret"></span></a>
+     <!--  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Pizza<span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="#">Veg</a></li>
           <li><a href="#">Non-Veg</a></li>
          
-        </ul>
+        </ul> -->
       </li>
       <li><a href="RegistrationPage"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
     
@@ -37,7 +39,9 @@
             <li><a href="LoginPage"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </c:if>
         <c:if test="${user_id !=null}" >
-      <li><a href="LogoutPage"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      <li><a href="/j_spring_security_Logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      
+      <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /> 
       </c:if>
     </ul>
   </div>
