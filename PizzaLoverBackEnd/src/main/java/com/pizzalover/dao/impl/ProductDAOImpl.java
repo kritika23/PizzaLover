@@ -114,5 +114,15 @@ public class ProductDAOImpl implements ProductDAO {
 		
 	}
 
+	public List<Product> getSimilarProducts(String search_string) {
+		
+		
+		//String hql ="from Product where category_id=?";
+	Query query= sessionFactory.getCurrentSession().createQuery("from Product where search_string='"+search_string+"'");
+	return query.list();
+
+	
+	}
+
 
 }

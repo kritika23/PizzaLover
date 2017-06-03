@@ -11,6 +11,9 @@
 
 
 
+
+
+
 <c:set var="imageFolder" value="resources/img/" />
 
 <c:if test="${!empty productList}">

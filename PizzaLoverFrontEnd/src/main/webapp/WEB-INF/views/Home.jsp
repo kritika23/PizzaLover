@@ -10,6 +10,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="resources/css/footer.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="resources/css/category.css">
   
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
@@ -26,7 +27,9 @@
 
 	<%@ include file="Menu.jsp" %> 
 	
-	<%@ include file="AllProducts.jsp" %> 
+
+
+	
 	 
 	<c:if test="${isAdmin=='true'}">
 	<%@ include file="admin/AdminHome.jsp" %>  
@@ -69,7 +72,8 @@
 
 	</c:if>
 	
-	
+		<%@ include file="UserProduct.jsp" %>
+		
 	<%@ include file="Footer.jsp" %>  
 
 

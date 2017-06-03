@@ -18,6 +18,8 @@ public interface ProductDAO {
 	public List<Product> getAllProductsByCategoryId(String category_id);
 	
 	public List<Product> getAllProductsBySupplierId(String supplier_id);
+	public List<Product> getSimilarProducts(String search_string);
+	
 }
 
 

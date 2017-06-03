@@ -97,7 +97,7 @@ public class CartController {
 	}
 
 	// For add and update myCart both
-	@RequestMapping(value = "/cart/add/{id}", method = RequestMethod.GET)
+	@RequestMapping(value ="/cart/add/{id}", method = RequestMethod.GET)
 	public ModelAndView addToCart(@PathVariable("id") String id) {
 		log.debug("Starting of the method addToCart");
 		// get the product based on product id
@@ -123,7 +123,7 @@ public class CartController {
 	/*	
 		if(cartDAO.getCart(loggedInUserid, myCart.getProductName()) !=null)
 		{
-			//increate the quantity and update it.
+			//increase the quantity and update it.
 			 int presentQuantity = cartDAO.getQuantity(loggedInUserid, myCart.getProductName());
 					 myCart.setQuantity(presentQuantity + 1);	 
 			 cartDAO.update(myCart);

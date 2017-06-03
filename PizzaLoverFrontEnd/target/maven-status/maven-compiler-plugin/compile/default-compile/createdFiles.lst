@@ -1,6 +1,7 @@
 com\pizzalover\controller\ProductController.class
 com\pizzalover\controller\AdminController.class
 com\pizzalover\controller\CategoryController.class
+com\pizzalover\util\FileUtil.class
 com\pizzalover\controller\HomeController.class
 com\pizzalover\util\Util.class
 com\pizzalover\controller\SupplierController.class

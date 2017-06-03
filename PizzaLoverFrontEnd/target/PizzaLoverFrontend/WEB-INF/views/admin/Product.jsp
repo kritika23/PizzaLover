@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -11,7 +12,8 @@
 <h2>Manage Products</h2>
 
 
-	<form action="manage_product_add">
+ <c:url var="action" value="manage_product_add"></c:url>
+	<form action="${action}" enctype="multipart/form-data" >
 
 		<input type="text" name="product_id" placeholder=" Product Id"></br>
 		 <label>Select Category:</label> <select name="category_name" class="form-control" id="category_name">
@@ -31,6 +33,9 @@
 			</c:forEach>
 		</select>
 		<input type="text" name="type" placeholder=" Type"></br>
+		
+		 <label>Image Upload:</label> </br>
+				<input type="file" name="image" placeholder="Upload Image" > </br>
 		<input  type="submit" value="CreateProduct">
 		
 	</form>
@@ -92,6 +97,8 @@
 			</c:forEach>
 		</table>
 	</div>
+
+
 
 </body>
 </html>
