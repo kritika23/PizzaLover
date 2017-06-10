@@ -25,6 +25,9 @@ import com.pizzalover.domain.Category;
 import com.pizzalover.domain.Product;
 import com.pizzalover.domain.Supplier;
 import com.pizzalover.util.FileUtil;
+import com.pizzalover.util.Util;
+
+
 
 @Controller
 public class ProductController {
@@ -111,7 +114,7 @@ private static  Logger log = LoggerFactory.getLogger(ProductController.class);
 			mv.addObject("message", "Successfully created the product");
 		}
 			
-		    FileUtil.upload(path, file, product.getProduct_id() + ".jpg");
+		FileUtil.upload(path, file, product.getProduct_id() + ".jpg");
 			session.setAttribute("productList",productDAO.list());
 			session.setAttribute("product", product);
 			log.debug("Ending of the Manage Product Add ");

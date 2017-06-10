@@ -48,15 +48,15 @@ public class CartDAOTestCase {
 		@Test
 			public void createCartTestCase(){
 
-			product = productDAO.getByProductId("P_03");
+			product = productDAO.getByProductId("P_05");
 			// cart.setCart_id(1);
 			cart.setUser_id("ankita");
-			cart.setPrice(350);
+			cart.setPrice(200);
 			cart.setProduct_name(product.getName());
 			System.out.println(new Date());
 		cart.setDateAdded(new Date());
 	
-		cart.setQuantity(5);
+		cart.setQuantity(3);
 		cart.setStatus("New");
 	
 		

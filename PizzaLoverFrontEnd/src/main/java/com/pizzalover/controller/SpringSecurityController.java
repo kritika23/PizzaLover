@@ -67,7 +67,7 @@ import com.pizzalover.domain.Supplier;
 			model.addAttribute("errorMessage", "Invalid Credentials.  Please try again.");
 			//model.addAttribute("invalidCredentials", "true");
 			log.debug("Ending of the method loginError");
-			return "home";
+			return "Home";
 
 		}
 
@@ -78,7 +78,7 @@ import com.pizzalover.domain.Supplier;
 			model.addAttribute("errorMessage", "You are not authorized to access this page");
 
 			log.debug("Ending of the method accessDenied");
-			return "home";
+			return "Home";
 
 		}
 		// <security:form-login authentication-success-forward-url="/success"/>

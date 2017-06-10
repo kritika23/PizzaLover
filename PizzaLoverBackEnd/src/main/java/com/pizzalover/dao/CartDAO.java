@@ -9,7 +9,7 @@ import com.pizzalover.domain.Cart;
 public interface CartDAO {
 	
 	public List<Cart> list(String user_id);
-	public Cart get(String id);
+	public Cart get(int id);
 
 	public boolean save(Cart cart);
 	public boolean update(Cart cart);

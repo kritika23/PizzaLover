@@ -35,7 +35,7 @@
 
 
 <td>
-<a href="cart/add/{product.product_id}" >Add to Cart</a>
+<a href="cart" >Add to Cart</a>
 </td>
 
 </tr>

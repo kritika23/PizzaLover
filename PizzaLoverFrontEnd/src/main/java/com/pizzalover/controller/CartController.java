@@ -8,6 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.pizzalover.dao.CartDAO;
 import com.pizzalover.dao.ProductDAO;
 import com.pizzalover.domain.Cart;
+import com.pizzalover.domain.Category;
 import com.pizzalover.domain.Product;
 
 /*@Controller
@@ -28,6 +29,7 @@ public class CartController {
 
 import java.sql.Date;
 import java.util.Collection;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
@@ -48,6 +50,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class CartController {
+	private static final String user_id = null;
 	Logger log = LoggerFactory.getLogger(CartController.class);
 	@Autowired
 	private CartDAO cartDAO;
@@ -64,29 +67,32 @@ public class CartController {
 	@RequestMapping(value = "/cart", method = RequestMethod.GET)
 	public String myCart(Model model) {
 		log.debug("Starting of the method cart");
-		model.addAttribute("cart", cart);
+		//model.addAttribute("cart", cart);
 		// get the logged-in user id 
 		//if you added the loggedInUserID in session
 		String loggedInUserid = (String) session.getAttribute("loggedInUserID");
 
-		/*if (loggedInUserid == null) {
+		if (loggedInUserid == null) {
 			Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 			loggedInUserid = auth.getName();
 			Collection<GrantedAuthority> authorities = (Collection<GrantedAuthority>)   auth.getAuthorities();
 			authorities.contains("ROLE_USER");
 			
-		}*/
+		}
 		if(loggedInUserid!=null)
 		{
 
 		int cartSize = cartDAO.list(loggedInUserid).size();
-
+		// List<Cart> cartList=cartDAO.list(loggedInUserid);
 		if (cartSize == 0) {
+			log.debug("cartSize == 0");
 			model.addAttribute("errorMessage", "You do not have any products in your Cart");
 		} else {
+			log.debug("cartSize != 0");
+			session.setAttribute("cartSize",cartSize);
 			model.addAttribute("cartList", cartDAO.list(loggedInUserid));
 			model.addAttribute("totalAmount", cartDAO.getTotalAmount(loggedInUserid));
-			model.addAttribute("displayCart", "true");
+			model.addAttribute("isUserClickedCart", "true");
 			model.addAttribute("cart",cart);
 
 		}
@@ -146,5 +152,41 @@ public class CartController {
 
 	}
 
+	
+	
+
+	
+	@GetMapping("/cart/delete/{id}")
+	public ModelAndView deleteFromCart(@PathVariable("id") int id)
+	{
+		log.debug("Starting of the deletion of cart");
+		log.debug("You are going to delete :" +id);
+		
+		ModelAndView mv=new ModelAndView("redirect:/Home");
+      /*  if(productDAO.getAllProductsByCartId(id).size()!=0)
+        {
+        	log.debug("Few products are there under this cart. You cannot delete this Id");
+        	mv.addObject("message", "Few products are there under this cart. You cannot delete this Id");
+        	return mv;
+        }*/
+        Cart cart=cartDAO.get(id);
+      
+	 // Cart cart=cartDAO.getCart(id, product_name);
+	  if(cartDAO.delete(cart))
+		{
+			log.debug("Deletion of cart succesfully");
+			mv.addObject("message", "Sucessfully deleted cart");
+		}
+		else
+		{
+			log.debug(" Detetion of cart failed");
+			mv.addObject("message", "Unable to delete the cart");
+		}
+	log.debug("Ending of the deletion of cart");
+	return mv;
+}
+	
+	
+	
 	
 }

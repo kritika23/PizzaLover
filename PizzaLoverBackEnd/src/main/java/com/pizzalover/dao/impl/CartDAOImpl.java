@@ -84,7 +84,7 @@ import com.pizzalover.domain.Cart;
 
 		public Long getTotalAmount(String user_id) {
 				log.debug("Starting of the method getTotalAmount");
-				String hql = "select sum(price*quantity) from cart where user_id=" + "'" + user_id + "'" + "  and status = " + "'New'";
+				String hql = "select sum(price*quantity) from Cart where user_id=" + "'" + user_id + "'" + "  and status = " + "'New'";
 				log.debug("hql" + hql);
 
 				Query query = sessionFactory.getCurrentSession().createQuery(hql);
@@ -114,7 +114,7 @@ import com.pizzalover.domain.Cart;
 		
 
 		@Transactional
-	public Cart get(String id) {
+	public Cart get(int id) {
 		return (Cart) sessionFactory.getCurrentSession().get(Cart.class, id);
 			
 		}
@@ -143,7 +143,8 @@ import com.pizzalover.domain.Cart;
 				return false;
 			}
 		}
-		
+
+
 
 		
 }
