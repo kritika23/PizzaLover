@@ -35,7 +35,7 @@
 
 
 <td>
-<a href="Cart" >Add to Cart</a>
+<a href="cart" >Add to Cart</a>
 </td>
 
 </tr>

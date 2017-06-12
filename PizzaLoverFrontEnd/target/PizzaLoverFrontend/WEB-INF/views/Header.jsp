@@ -25,13 +25,9 @@
     
     <ul class="nav navbar-nav navbar-right">
           <li class="active"><a href="Home">Home</a></li>
-     <!--  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Pizza<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Veg</a></li>
-          <li><a href="#">Non-Veg</a></li>
-         
-        </ul> -->
-      </li>
+          
+      
+<li class="cart-icon-bottom"><a href="cart">Cart {${cartSize}}</a></li>   
       <li><a href="RegistrationPage"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
     
             <c:if test="${user_id ==null}" >

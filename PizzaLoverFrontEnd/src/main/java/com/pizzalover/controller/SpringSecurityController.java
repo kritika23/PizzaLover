@@ -131,7 +131,7 @@ import com.pizzalover.domain.Supplier;
 				session.setAttribute("cart", cart);
 				// Fetch the myCart list based on user ID
 				List<Cart> cartList = cartDAO.list(userID);
-				session.setAttribute("cartList", cartList);
+				//session.setAttribute("cartList", cartList);
 				session.setAttribute("cartSize", cartList.size());
 				//session.setAttribute("totalAmount", cartDAO.getTotalAmount(userID));
 

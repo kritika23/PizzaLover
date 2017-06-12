@@ -76,4 +76,13 @@ public class HomeController {
 
 		return "Home";
 	}
+	
+	
+	@RequestMapping("CheckOut")
+	public String CheckOut(Model model){
+		model.addAttribute("isUserClickedCheckOut", "true");
+		return "Home";
+	}
 }
+
+

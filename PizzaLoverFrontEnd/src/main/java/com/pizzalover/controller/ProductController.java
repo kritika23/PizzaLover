@@ -1,5 +1,9 @@
 package com.pizzalover.controller;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -46,6 +50,27 @@ private static  Logger log = LoggerFactory.getLogger(ProductController.class);
 	 private String path   ="D://DT//Kritika23//PizzaLoverFrontend//src//main//webapp//WEB-INF//resources//images";
 	@Autowired HttpSession session;
 	 
+	
+
+	
+/*	@RequestMapping("/all/product/viewproduct")
+	public ModelAndView viewAllProducts(@RequestParam("description")String description, @RequestParam("name")String name,@RequestParam("price")String price)
+	{
+	  product= productDAO.getByProductId(description);
+	  product= productDAO.getByProductId(price);
+	  product=productDAO.getByProductName(name);
+	  
+	  
+
+		ModelAndView mv= new ModelAndView("redirect:/Home");
+		mv.addObject("selectedProduct", product);
+		
+		session.setAttribute("selectedProduct", product);
+		return mv;
+		
+	}*/
+
+	
 	
 	
 	@RequestMapping("/search_product/{search_string}")
@@ -113,13 +138,23 @@ private static  Logger log = LoggerFactory.getLogger(ProductController.class);
 			productDAO.save(product);
 			mv.addObject("message", "Successfully created the product");
 		}
+		
+		MultipartFile image=product.getImage();
+		if(image!=null && !image.isEmpty()){
+		Path path=Paths.get(""+product.getProduct_id()+"D://DT//Kritika23//PizzaLoverFrontend//src//main//webapp//WEB-INF//resources//images/"+product.getProduct_id()+".png");
+
+		try {
+			image.transferTo(new File(path.toString()));
+		} catch (IllegalStateException e) {
 			
-		FileUtil.upload(path, file, product.getProduct_id() + ".jpg");
-			session.setAttribute("productList",productDAO.list());
-			session.setAttribute("product", product);
-			log.debug("Ending of the Manage Product Add ");
+			e.printStackTrace();
+		} catch (IOException e) {
 			
-			return mv;
+			e.printStackTrace();
+		}
+		}
+		return mv;
+
 		}
 
 	

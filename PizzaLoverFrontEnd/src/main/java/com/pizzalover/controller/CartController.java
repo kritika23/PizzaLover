@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.method.annotation.ModelAndViewMethodReturnValueHandler;
 
 import com.pizzalover.dao.CartDAO;
 import com.pizzalover.dao.ProductDAO;
@@ -31,6 +32,7 @@ import java.sql.Date;
 import java.util.Collection;
 import java.util.List;
 
+import javax.jws.WebParam.Mode;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -185,6 +187,8 @@ public class CartController {
 	log.debug("Ending of the deletion of cart");
 	return mv;
 }
+	
+	
 	
 	
 	

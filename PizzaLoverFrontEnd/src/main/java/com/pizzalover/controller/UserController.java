@@ -37,7 +37,7 @@ public class UserController {
 		  {
 			  user.setRole("ROLE_USER");
 			  userDAO.save(user);
-			  mv.addObject("message", " Register Successful , " +user.getUser_id());
+			  mv.addObject("message", " Register Successfull , " +user.getUser_id());
 			  
 			  
 		  }
