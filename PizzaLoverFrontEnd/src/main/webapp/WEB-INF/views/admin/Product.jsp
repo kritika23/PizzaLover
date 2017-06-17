@@ -38,6 +38,7 @@
 		
 		 <label>Image Upload:</label> </br>
 				<input type="file" name="image" placeholder="Upload Image" > </br>
+				
 		<input  type="submit" value="CreateProduct">
 		
 	</form>

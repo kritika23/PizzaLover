@@ -14,6 +14,8 @@
 
  <c:url var="action" value="manage_product_add"></c:url>
 	<form action="${action}" enctype="multipart/form-data" >
+	
+
 
 		<input type="text" name="product_id" placeholder=" Product Id"></br>
 		 <label>Select Category:</label> <select name="category_name" class="form-control" id="category_name">

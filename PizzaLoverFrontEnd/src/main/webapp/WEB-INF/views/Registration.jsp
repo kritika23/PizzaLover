@@ -12,33 +12,33 @@
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
-                        <input type="text" name="fname" id="first_name" class="form-control input-lg" placeholder="First Name" tabindex="1">
+                        <input type="text" name="fname" id="first_name" class="form-control input-lg" placeholder="First Name" tabindex="1" required="required">
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
-						<input type="text" name="lname" id="last_name" class="form-control input-lg" placeholder="Last Name" tabindex="2">
+						<input type="text" name="lname" id="last_name" class="form-control input-lg" placeholder="Last Name" tabindex="2" required="required">
 					</div>
 				</div>
 			</div>
 			<div class="form-group">
-				<input type="text" name="number" id="number" class="form-control input-lg" placeholder="Mobile Number" tabindex="3">
+				<input type="text" name="number" id="number" class="form-control input-lg" placeholder="Mobile Number" tabindex="3" required="required">
 			</div>
 			<div class="form-group">
-				<input type="text" name="add" id="address" class="form-control input-lg" placeholder="Address" tabindex="3">
+				<input type="text" name="add" id="address" class="form-control input-lg" placeholder="Address" tabindex="3" required="required">
 			</div>
 			<div class="form-group">
-				<input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="4">
+				<input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="4" required="required">
 			</div>
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
-						<input type="text" name="user_id" id="user_id" class="form-control input-lg" placeholder="User Id" tabindex="5">
+						<input type="text" name="user_id" id="user_id" class="form-control input-lg" placeholder="User Id" tabindex="5" required="required">
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
-						<input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" tabindex="6">
+						<input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" tabindex="6" required="required">
 					</div>
 				</div>
 			</div>

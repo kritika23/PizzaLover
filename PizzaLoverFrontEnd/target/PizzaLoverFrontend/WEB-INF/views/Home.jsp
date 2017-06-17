@@ -48,9 +48,10 @@
 	</c:if>
 
 	<c:if test="${isUserClickedCart=='true'}">
-
 	<%@ include file="Cart.jsp" %> 
 	</c:if>
+	
+
 	
 <c:if test="${empty isUserClickedLogin }">
 <c:if test="${empty isUserClickedRegisteration }">
@@ -61,19 +62,22 @@
 </c:if>
 
 	<c:if test="${isUserClickedLogin=='true' }">
-
 	<%@ include file="Login.jsp" %>  
-
 	</c:if>
 
 
 	<c:if test="${isUserClickedRegisteration=='true' }">
-	
-		<%@ include file="Registration.jsp" %>  
-
+	<%@ include file="Registration.jsp" %>  
 	</c:if>
 	
-		<%@ include file="UserProduct.jsp" %>
+	
+	<c:if test="${isUserClickedCheckOut=='true' }">
+	<%@ include file="CheckOut.jsp" %>  
+	</c:if>
+	
+
+	
+	<%@ include file="UserProduct.jsp" %>
 		
 	<%@ include file="Footer.jsp" %>  
 

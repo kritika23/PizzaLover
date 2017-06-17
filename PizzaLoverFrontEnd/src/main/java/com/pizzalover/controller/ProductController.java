@@ -107,7 +107,7 @@ private static  Logger log = LoggerFactory.getLogger(ProductController.class);
 	}
 	 
 	//@RequestMapping("/manage_product_add")
-	@RequestMapping(value = "/manage_product_add")
+	@PostMapping(value ="/manage_product_add")
 	public ModelAndView createProduct(@RequestParam("image") MultipartFile file,@RequestParam("product_id")String product_id, @RequestParam("category_name")String category_name,@RequestParam("description")String description, @RequestParam("name")String name,@RequestParam("price")String price, @RequestParam("supplier_name")String supplier_name, @RequestParam("type")String type)
 	{
 		log.debug("Starting of Manage Product Add");

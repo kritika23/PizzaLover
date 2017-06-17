@@ -60,7 +60,7 @@ public class HomeController {
 	@RequestMapping("LoginPage")
 	public String LoginPage(Model model) {
 		model.addAttribute("isUserClickedLogin", "true");
-
+		
 		return "Home";
 	}
 
